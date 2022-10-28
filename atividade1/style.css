@@ -96,7 +96,7 @@ button:active {
 }
 
 #questao2 {
-  animation: loading 0.5s step-end 1s infinite running;
+  animation: loading 0.5s step-end infinite running;
 }
 
 #questao3 {
