@@ -4,6 +4,12 @@
   box-sizing: border-box;
   text-align: center;
 }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 /* LAYOUT */
 .container {
@@ -87,7 +93,7 @@ button:active {
   font-weight: bold;
 }
 
-/******* QUESTÃO 2 - 3*******/
+/******* QUESTÃO 2 - 3 *******/
 #questao2, #questao3 > div{
   width: 150px;
   height: 150px;
@@ -122,6 +128,69 @@ button:active {
 @keyframes loading {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
+}
+
+/******* QUESTÃO 4 *******/
+.loader {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid gray;
+}
+
+.loader div {
+  width: 25px;
+  height: 25px;
+}
+
+#bit1 {
+  background-color: lightgray;
+  animation: b1 1s linear 0.8s infinite paused;
+  transform: translate(31px, 0px);
+}
+
+#bit2 {
+  background-color: gray;
+  animation: b2 1s linear 0.65s infinite paused;
+  transform: translate(6px, 0px);
+}
+
+#bit3 {
+  background-color: black;
+  animation: b3 1s linear 0.5s infinite paused;
+  transform: translate(-19px, 0px);
+}
+
+.loader:hover #bit1,
+.loader:hover #bit2,
+.loader:hover #bit3 {
+  animation-play-state: running;
+}
+
+@keyframes b1 {
+  0%, 100% {transform: translate(0px, 0px);}
+  50% {
+    transform: translate(75px, 0px);
+    opacity: 0.1;
+  }
+}
+
+@keyframes b2 {
+  0%, 100% { transform: translate(-25px, 0px);}
+  50% {
+    transform: translate(50px, 0px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes b3 {
+  0%, 100% {transform: translate(-50px, 0px);}
+  50% {
+    transform: translate(20px, 0px);
+  }
 }
 
 /******* QUESTÃO 5 *******/
@@ -162,19 +231,19 @@ button:active {
 }
 
 .goblin-down {
-  animation: down 1s step-end;  
+  animation: down 0.8s step-end;  
 }
 
 .goblin-right {
-  animation: right 1.5s  step-end 1s;  
+  animation: right 1.2s  step-end 0.8s;  
 }
 
 .goblin-up {
-  animation: up 1s step-end 2.5s;  
+  animation: up 0.8s step-end 2s;  
 }
 
 .goblin-left {
-  animation: left 1.5s step-end 3.5s;  
+  animation: left 1.2s step-end 2.8s;  
 }
 
 @keyframes down{
