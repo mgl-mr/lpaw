@@ -92,11 +92,14 @@ button:active {
   width: 150px;
   height: 150px;
   background-size: contain;
-  background-image: url(img/q2.png);
+  border-radius: 50%;
+  
+  border: solid 10px #ccc;
+  border-top: solid 12px #111;
 }
 
 #questao2 {
-  animation: loading 0.5s step-end infinite running;
+  animation: loading 2s linear infinite running;
 }
 
 #questao3 {
@@ -109,7 +112,7 @@ button:active {
 
 #questao3 > div {
   border-radius: 50%;
-  animation: loading 0.5s step-end infinite paused;
+  animation: loading 2s linear infinite paused;
 }
 
 #questao3 > div:hover {
@@ -117,16 +120,8 @@ button:active {
 }
 
 @keyframes loading {
-  0%, 100% {transform: rotate(0deg);}
-  10% {transform: rotate(36deg);}
-  20% {transform: rotate(72deg);}
-  30% {transform: rotate(108deg);}
-  40% {transform: rotate(144deg);}
-  50% {transform: rotate(180deg);}
-  60% {transform: rotate(216deg);}
-  70% {transform: rotate(252deg);}
-  80% {transform: rotate(288deg);}
-  90% {transform: rotate(324deg);}
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
 }
 
 /******* QUESTÃO 5 *******/
@@ -139,7 +134,7 @@ button:active {
 #questao5 div {
   width: 494px;
   height: 34px;
-  animation: sidebar 3s linear paused;
+  animation: sidebar 3s linear forwards paused;
 }
 
 #questao5 div:hover{
@@ -148,15 +143,140 @@ button:active {
 
 @keyframes sidebar {
   0% {border-left: solid 0px red;}
-  10% {border-left: solid 50px red;}
-  20% {border-left: solid 100px red;}
-  30% {border-left: solid 150px red;}
-  40% {border-left: solid 200px red;}
-  50% {border-left: solid 250px red;}
-  60% {border-left: solid 300px red;}
-  70% {border-left: solid 350px red;}
-  80% {border-left: solid 400px red;}
-  90% {border-left: solid 450px red;}
   100% {border-left: solid 494px red;}
 }
 
+/******* QUESTÃO 6 *******/
+#questao6{
+  width: 500px;
+  height: 400px;
+  border: double 5px green;
+}
+
+#questao6 div {
+  position: absolute;
+  visibility: hidden;
+  width: 150px;
+  height: 170px;
+  background-image: url(img/goblin_big.png);
+}
+
+.goblin-down {
+  animation: down 1s step-end;  
+}
+
+.goblin-right {
+  animation: right 1.5s  step-end 1s;  
+}
+
+.goblin-up {
+  animation: up 1s step-end 2.5s;  
+}
+
+.goblin-left {
+  animation: left 1.5s step-end 3.5s;  
+}
+
+@keyframes down{
+  0% {
+    visibility: visible;
+    background-position: 0px 0px;
+    transform: translateY(0px);
+  }
+  25% {  
+    background-position: -170px 0px;
+    transform: translateY(70px);
+  }
+  50% { 
+    background-position: -325px 0px;
+    transform: translateY(140px);
+  }
+  75% { 
+    background-position: -170px 0px;
+    transform: translateY(220px);
+  }
+}
+
+@keyframes right{
+  0% {
+    visibility: visible;
+    background-position: 0px -360px;
+    transform: translate(0px, 220px);
+  }
+  16% { 
+    background-position: -170px -360px;
+    transform: translate(58px, 220px);
+  }
+  32% { 
+    background-position: -325px -360px;
+    transform: translate(116px, 220px);
+  }
+  48% { 
+    background-position: -170px -360px;
+    transform: translate(174px, 220px);
+  }
+  64% {  
+    background-position: -325px -360px;
+    transform: translate(232px, 220px);
+  }
+  80% {   
+    background-position: -170px -360px;
+    transform: translate(290px, 220px);
+  }
+  96% {   
+    background-position: -325px -360px;
+    transform: translate(350px, 220px);
+  }
+}
+
+@keyframes up{
+  0% {
+    visibility: visible;
+    background-position: 0px -180px;
+    transform: translate(350px, 220px);
+  }
+  25% {   
+    background-position: -170px -180px;
+    transform: translate(350px, 140px);
+  }
+  50% {    
+    background-position: -325px -180px;
+    transform: translate(350px, 70px);
+  }
+  75% {   
+    background-position: -170px -180px;
+    transform: translate(350px, 0px);
+  }
+}
+
+@keyframes left{
+  0% {
+    visibility: visible;
+    background-position: 0px -540px;
+    transform: translate(350px, 0px);
+  }
+  16% {    
+    background-position: -170px -540px;
+    transform: translate(290px, 0px);
+  }
+  32% {   
+    background-position: -325px -540px;
+    transform: translate(232px, 0px);
+  }
+  48% {    
+    background-position: -170px -540px;
+    transform: translate(174px, 0px);
+  }
+  64% {   
+    background-position: -325px -540px;
+    transform: translate(116px, 0px);
+  }
+  80% {
+    background-position: -170px -540px;
+    transform: translate(58px, 0px);
+  }
+  96% {
+    background-position: -325px -540px;
+    transform: translate(0px, 0px);
+  }
+}
