@@ -4,6 +4,12 @@
   box-sizing: border-box;
   text-align: center;
 }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 /* LAYOUT */
 .container {
@@ -87,7 +93,7 @@ button:active {
   font-weight: bold;
 }
 
-/******* QUESTÃO 2 - 3*******/
+/******* QUESTÃO 2 - 3 *******/
 #questao2, #questao3 > div{
   width: 150px;
   height: 150px;
@@ -122,6 +128,69 @@ button:active {
 @keyframes loading {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
+}
+
+/******* QUESTÃO 4 *******/
+.loader {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid gray;
+}
+
+.loader div {
+  width: 25px;
+  height: 25px;
+}
+
+#bit1 {
+  background-color: lightgray;
+  animation: b1 1s linear 0.8s infinite paused;
+  transform: translate(31px, 0px);
+}
+
+#bit2 {
+  background-color: gray;
+  animation: b2 1s linear 0.65s infinite paused;
+  transform: translate(6px, 0px);
+}
+
+#bit3 {
+  background-color: black;
+  animation: b3 1s linear 0.5s infinite paused;
+  transform: translate(-19px, 0px);
+}
+
+.loader:hover #bit1,
+.loader:hover #bit2,
+.loader:hover #bit3 {
+  animation-play-state: running;
+}
+
+@keyframes b1 {
+  0%, 100% {transform: translate(0px, 0px);}
+  50% {
+    transform: translate(75px, 0px);
+    opacity: 0.1;
+  }
+}
+
+@keyframes b2 {
+  0%, 100% { transform: translate(-25px, 0px);}
+  50% {
+    transform: translate(50px, 0px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes b3 {
+  0%, 100% {transform: translate(-50px, 0px);}
+  50% {
+    transform: translate(20px, 0px);
+  }
 }
 
 /******* QUESTÃO 5 *******/
@@ -162,19 +231,19 @@ button:active {
 }
 
 .goblin-down {
-  animation: down 1s step-end;  
+  animation: down 0.8s step-end;  
 }
 
 .goblin-right {
-  animation: right 1.5s  step-end 1s;  
+  animation: right 1.2s  step-end 0.8s;  
 }
 
 .goblin-up {
-  animation: up 1s step-end 2.5s;  
+  animation: up 0.8s step-end 2s;  
 }
 
 .goblin-left {
-  animation: left 1.5s step-end 3.5s;  
+  animation: left 1.2s step-end 2.8s;  
 }
 
 @keyframes down{
@@ -183,15 +252,31 @@ button:active {
     background-position: 0px 0px;
     transform: translateY(0px);
   }
-  25% {  
+  12.5% {  
     background-position: -170px 0px;
-    transform: translateY(70px);
+    transform: translateY(31px);
+  }
+  25% {  
+    background-position: -325px 0px;
+    transform: translateY(62px);
+  }
+  37.5% {  
+    background-position: -170px 0px;
+    transform: translateY(93px);
   }
   50% { 
     background-position: -325px 0px;
-    transform: translateY(140px);
+    transform: translateY(124px);
+  }
+  62.5% {  
+    background-position: -170px 0px;
+    transform: translateY(155px);
   }
   75% { 
+    background-position: -325px 0px;
+    transform: translateY(186px);
+  }
+  87.5% {  
     background-position: -170px 0px;
     transform: translateY(220px);
   }
@@ -203,25 +288,49 @@ button:active {
     background-position: 0px -360px;
     transform: translate(0px, 220px);
   }
-  16% { 
+  8% { 
     background-position: -170px -360px;
+    transform: translate(29px, 220px);
+  }
+  16% { 
+    background-position: -325px -360px;
     transform: translate(58px, 220px);
+  }
+  24% { 
+    background-position: -170px -360px;
+    transform: translate(87px, 220px);
   }
   32% { 
     background-position: -325px -360px;
     transform: translate(116px, 220px);
   }
-  48% { 
+  40% { 
     background-position: -170px -360px;
+    transform: translate(145px, 220px);
+  }
+  48% { 
+    background-position: -325px -360px;
     transform: translate(174px, 220px);
+  }
+  56% { 
+    background-position: -170px -360px;
+    transform: translate(203px, 220px);
   }
   64% {  
     background-position: -325px -360px;
     transform: translate(232px, 220px);
   }
-  80% {   
+  72% { 
     background-position: -170px -360px;
+    transform: translate(261px, 220px);
+  }
+  80% {   
+    background-position: -325px -360px;
     transform: translate(290px, 220px);
+  }
+  88% { 
+    background-position: -170px -360px;
+    transform: translate(319px, 220px);
   }
   96% {   
     background-position: -325px -360px;
@@ -235,15 +344,31 @@ button:active {
     background-position: 0px -180px;
     transform: translate(350px, 220px);
   }
-  25% {   
+  12.5% {   
     background-position: -170px -180px;
-    transform: translate(350px, 140px);
+    transform: translate(350px, 189px);
+  }
+  25% {   
+    background-position: -325px -180px;
+    transform: translate(350px, 158px);
+  }
+  37.5% {   
+    background-position: -170px -180px;
+    transform: translate(350px, 127px);
   }
   50% {    
     background-position: -325px -180px;
-    transform: translate(350px, 70px);
+    transform: translate(350px, 96px);
+  }
+  62.5% {   
+    background-position: -170px -180px;
+    transform: translate(350px, 65px);
   }
   75% {   
+    background-position: -325px -180px;
+    transform: translate(350px, 34px);
+  }
+  87.5% {   
     background-position: -170px -180px;
     transform: translate(350px, 0px);
   }
@@ -255,25 +380,49 @@ button:active {
     background-position: 0px -540px;
     transform: translate(350px, 0px);
   }
-  16% {    
+  8% {    
     background-position: -170px -540px;
-    transform: translate(290px, 0px);
+    transform: translate(321px, 0px);
+  }
+  16% {    
+    background-position: -325px -540px;
+    transform: translate(292px, 0px);
+  }
+  24% {    
+    background-position: -170px -540px;
+    transform: translate(263px, 0px);
   }
   32% {   
     background-position: -325px -540px;
-    transform: translate(232px, 0px);
+    transform: translate(234px, 0px);
+  }
+  40% {    
+    background-position: -170px -540px;
+    transform: translate(205px, 0px);
   }
   48% {    
+    background-position: -325px -540px;
+    transform: translate(176px, 0px);
+  }
+  56% {    
     background-position: -170px -540px;
-    transform: translate(174px, 0px);
+    transform: translate(147px, 0px);
   }
   64% {   
     background-position: -325px -540px;
-    transform: translate(116px, 0px);
+    transform: translate(118px, 0px);
+  }
+  72% {    
+    background-position: -170px -540px;
+    transform: translate(89px, 0px);
   }
   80% {
+    background-position: -325px -540px;
+    transform: translate(60px, 0px);
+  }
+  88% {    
     background-position: -170px -540px;
-    transform: translate(58px, 0px);
+    transform: translate(31px, 0px);
   }
   96% {
     background-position: -325px -540px;
