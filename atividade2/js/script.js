@@ -199,7 +199,7 @@ function App(){
     fundoGradiente.addColorStop(.2, '#cdd9ff');
     fundoGradiente.addColorStop(.6, '#7394ff');
 		fundoGradiente.addColorStop(.8, '#0f1d35');
-   
+    
     //meio circulo
     ctx.lineWidth = 0;
     ctx.beginPath();
