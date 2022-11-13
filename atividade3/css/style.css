@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+canvas {
+  border: 1px solid black;
+}
