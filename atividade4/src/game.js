@@ -71,7 +71,6 @@ const loop = () => {
 			console.error('DEAD!!!');
       
       let textMetric = CTX.measureText(`Score: ${points}`);
-      
       CTX.clearRect(CANVAS.width / 2 - textMetric.width / 2, 0, textMetric.width, 30);
       
       score.text += ' GAME OVER !!';
