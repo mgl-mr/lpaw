@@ -57,8 +57,8 @@ const loop = () => {
 		}); 
 
     if(orange.colide(smile)) {
-      orange.x = (Math.random()*CANVAS.width - 15) + 15;
-      orange.y = (Math.random()*CANVAS.height - 15) + 15;
+      orange.x = (Math.random()*(CANVAS.width - orange.size)) + orange.size;
+      orange.y = (Math.random()*(CANVAS.height - orange.size)) + orange.size;
 
       points ++;
       score.text = `Score: ${points}`;
