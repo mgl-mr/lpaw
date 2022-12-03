@@ -112,6 +112,4 @@ export default class Hero extends Circle {
 		this.hit.x = this.x + this.size;
 		this.hit.y = this.y + this.size;
 	}
-  
-  
 }
