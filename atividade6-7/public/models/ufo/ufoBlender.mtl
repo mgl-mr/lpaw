@@ -1,0 +1,23 @@
+# Blender 3.3.1 MTL File: 'ufoBlender.blend'
+# www.blender.org
+
+newmtl UFO_texture
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd ufo_diffuse.png
+map_d ufo_diffuse.png
+map_Ke ufo_diffuse_glow.png
+map_Bump -bm 0.200000 Map__7_Normal_Bump.tga
+
+newmtl UFO_texture2
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd ufo_diffuse2.png
+map_Ke ufo_diffuse2_glow.png
